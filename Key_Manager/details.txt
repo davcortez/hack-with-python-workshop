@@ -1,0 +1,9 @@
+Proyecto: Gestor de claves
+
+Descripción:
+Objetivo
+Desarrollar un gestor de contraseñas seguro para almacenar y gestionar contraseñas de manera cifrada.
+Condiciones
+Crear y guardar contraseñas cifradas (base de datos sqlite).
+Usar cryptography para cifrar y descifrar contraseñas.
+Proveer una interfaz simple para agregar, recuperar y listar contraseñas.

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Contraseñas</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 255, 255);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .main_container {
+            width: 80%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 255, 255);
+            padding: 30px;
+            box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.062);
+            position: relative;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+
+        .main_container::before {
+            position: absolute;
+            content: "";
+            width: 300px;
+            height: 300px;
+            background-color: rgb(209, 193, 255);
+            transform: rotate(45deg);
+            left: -180px;
+            bottom: 30px;
+            z-index: 1;
+            border-radius: 30px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
+        }
+
+        .heading {
+            font-size: 2em;
+            color: #2e2e2e;
+            font-weight: 700;
+            margin: 5px 0 20px 0;
+            z-index: 2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            z-index: 2;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: rgb(209, 193, 255);
+            color: black;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .back_link {
+            z-index: 2;
+            font-size: 1em;
+            font-weight: 500;
+            color: rgb(44, 24, 128);
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background-color: rgb(209, 193, 255);
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .back_link:hover {
+            background-color: rgb(199, 114, 255);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_container">
+        <h1 class="heading">Passwords List</h1>
+        <table>
+            <tr>
+                <th>Servicio</th>
+                <th>Usuario</th>
+                <th>Contraseña</th>
+            </tr>
+        </table>
+        <a href="/" class="back_link">Volver a inicio</a>
+    </div>
+</body>
+</html>
