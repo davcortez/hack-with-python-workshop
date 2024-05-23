@@ -1,35 +1,33 @@
-def verificar_robustez_contraseña(contraseña):
+def verify_password_strength(password):
 
-    longitud_suficiente = len(contraseña) >= 8
-    
+    sufficient_length = len(password) >= 8
 
-    contiene_mayusculas = any(c.isupper() for c in contraseña)
-    
 
-    contiene_minusculas = any(c.islower() for c in contraseña)
-    
+    contains_uppercase = any(c.isupper() for c in password)
 
-    contiene_digitos = any(c.isdigit() for c in contraseña)
-    
 
-    contiene_caracteres_especiales = any(c in "!@#$%^&*()-_=+[]{}|;:',.<>?/" for c in contraseña)
-    
+    contains_lowercase = any(c.islower() for c in password)
 
-    puntuacion = longitud_suficiente + contiene_mayusculas + contiene_minusculas + contiene_digitos + contiene_caracteres_especiales
-    
 
-    if puntuacion >= 5:
-        print("¡La contraseña es robusta!")
+    contains_digits = any(c.isdigit() for c in password)
+
+
+    contains_special_characters = any(c in "!@#$%^&*()-_=+[]{}|;:',.<>?/" for c in password)
+
+
+    score = sufficient_length + contains_uppercase + contains_lowercase + contains_digits + contains_special_characters
+
+
+    if score >= 5:
+        print("The password is strong!")
     else:
-        print("La contraseña no es lo suficientemente robusta.")
+        print("The password is not strong enough.")
 
 
-    print("Puntuación de la contraseña:", puntuacion)
+    print("Password score:", score)
 
 
-contraseña = input("Introduce tu contraseña: ")
+password = input("Enter your password: ")
 
 
-verificar_robustez_contraseña(contraseña)
-
-
+verify_password_strength(password)
