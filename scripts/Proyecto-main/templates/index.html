@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Claves</title>
+</head>
+<body>
+    <h1>Gestor de Claves</h1>
+    <ul>
+        <li><a href="{{ url_for('add') }}">Añadir contraseña</a></li>
+        <li><a href="{{ url_for('get') }}">Recuperar contraseña</a></li>
+    </ul>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
