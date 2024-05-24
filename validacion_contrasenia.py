@@ -44,6 +44,7 @@ def main():
             print("- Incluir al menos un carácter especial (por ejemplo, !, @, #, $, etc.).")
     else:
         print("¡La contraseña es robusta!")
+        
 
 if __name__ == "__main__":
     main()
