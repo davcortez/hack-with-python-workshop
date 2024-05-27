@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desencriptar Mensaje</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #bee9fa;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #9ad675;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #62ff00;
+        }
+        #respuesta {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #8ee483;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desencriptar Mensaje</h1>
+    <form action="/desencriptar" method="post">
+        <label for="clave">Clave:</label>
+        <input type="text" id="clave" name="clave" required>
+        <button type="submit">Desencriptar</button>
+    </form>
+
+    {% if mensaje_desencriptado %}
+    <h2>Mensaje Desencriptado</h2>
+    <p>{{ mensaje_desencriptado }}</p>
+    {% elif error %}
+    <h2>Error</h2>
+    <p>{{ error }}</p>
+    {% endif %}
+
+    <a href="/">Encriptar Mensaje</a>
+</body>
+</html>

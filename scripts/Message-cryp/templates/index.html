@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encriptar Mensaje</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4b8e9;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            color: #000000;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #db4444;
+            color: white;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Encriptar Mensaje</h1>
+    <form action="/encriptar" method="post">
+        <label for="mensaje">Mensaje:</label>
+        <input type="text" id="mensaje" name="mensaje" required>
+        <button type="submit">Encriptar</button>
+    </form>
+
+    {% if mensaje_encriptado and clave %}
+    <h2>Mensaje Encriptado</h2>
+    <p>{{ mensaje_encriptado }}</p>
+    <h2>Clave</h2>
+    <p>{{ clave }}</p>
+    {% endif %}
+
+    <a href="/desencriptar_form">Desencriptar Mensaje</a>
+</body>
+</html>
